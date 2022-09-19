@@ -11,6 +11,8 @@ class Car extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['chassis_number', 'header', 'description', 'image'];
+
     public function manufacturer(): BelongsTo
     {
         return $this->belongsTo(Manufacturer::class);
