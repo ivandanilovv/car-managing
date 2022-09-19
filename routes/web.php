@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ManufacturerController;
+use App\Http\Controllers\TypeController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -33,3 +35,6 @@ Route::middleware([
         return Inertia::render('Dashboard');
     })->name('dashboard');
 });
+
+Route::apiResource('types', TypeController::class)->only('index');
+Route::apiResource('manufacturers', ManufacturerController::class)->only('index');
